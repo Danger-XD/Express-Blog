@@ -7,6 +7,6 @@ router.get("/",blogController.homePage);
 router.post("/submit",blogController.submitOperation);
 router.get("/about",blogController.aboutPage);
 router.post("/update",blogController.updateOperation);
-router.delete("/delete",blogController.deleteOperation);
+router.post("/delete",blogController.deleteOperation);
 
 export default router;

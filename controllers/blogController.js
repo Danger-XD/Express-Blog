@@ -1,11 +1,35 @@
-export const homePage = async (req,res) =>{
+import { log } from "console";
+import fs from "fs";
+// Function to save data to a file
+const saveDataToFile = (data) => {
+    fs.writeFileSync('data.json', JSON.stringify(data), 'utf8', (err) => {
+        if (err) console.error('Error saving data:', err);
+    });
+};
+
+// Function to load data from a file on server start
+const loadDataFromFile = () => {
+    if (fs.existsSync('data.json')) {
+        const data = fs.readFileSync('data.json', 'utf8');
+        return JSON.parse(data);
+    } else {
+        return []; // Return empty array if no data file exists
+    }
+};
+
+// Initialize database with loaded data
+let database = loadDataFromFile();
+
+
+
+export const homePage = (req,res) =>{
         try {
-            res.render("index.ejs",{data:database});
+            res.render("index.ejs",{data:database,});
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
 }
-export const submitOperation = async (req,res) =>{
+export const submitOperation = (req,res) =>{
     try {
         let title = req.body["title"];
         let content = req.body["content"];
@@ -18,20 +42,21 @@ export const submitOperation = async (req,res) =>{
             date:date
         }
         database.push(data);
-        res.render("index.ejs",{data:database});
+        saveDataToFile(database);
+        res.redirect("/v1/");
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 }
 
-export const aboutPage = async (req,res) =>{
+export const aboutPage = (req,res) =>{
     try {
         res.render("about.ejs");
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 }
-export const updateOperation = async (req,res) =>{
+export const updateOperation = (req,res) =>{
     try {
         const { title, newTitle, newContent, newTags } = req.body;
 
@@ -43,9 +68,9 @@ export const updateOperation = async (req,res) =>{
             post.title = newTitle || post.title;  // Update title if provided
             post.content = newContent || post.content;  // Update content if provided
             post.tags = newTags ? newTags.split(",") : post.tags;  // Update tags if provided
-            post.date = new Date().toDateString();  // Update the date
 
-            res.render("index.ejs", { data: database });
+            saveDataToFile(database);
+            res.redirect("/v1/");
         } else {
             res.status(404).json({ message: "Post not found!" });
         }
@@ -53,7 +78,7 @@ export const updateOperation = async (req,res) =>{
         res.status(500).json({ message: error.message });
     }
 }
-export const deleteOperation = async (req,res) =>{
+export const deleteOperation = (req,res) =>{
     try {
         const { title } = req.body;
 
@@ -62,8 +87,9 @@ export const deleteOperation = async (req,res) =>{
 
         if (postIndex !== -1) {
             // Remove the post from the array
-            database.splice(postIndex, 1);
-            res.render("index.ejs", { data: database });
+            database.splice(postIndex, 1);//postIndex and 1 is for deleting only 1 value
+            saveDataToFile(database);
+            res.redirect("/v1/");
         } else {
             res.status(404).json({ message: "Post not found!" });
         }
@@ -72,4 +98,5 @@ export const deleteOperation = async (req,res) =>{
     }
 }
 
-const database = [];
+
+
