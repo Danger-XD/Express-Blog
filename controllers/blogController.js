@@ -1,4 +1,3 @@
-import { log } from "console";
 import fs from "fs";
 // Function to save data to a file
 const saveDataToFile = (data) => {
@@ -24,7 +23,7 @@ let database = loadDataFromFile();
 
 export const homePage = (req,res) =>{
         try {
-            res.render("index.ejs",{data:database,});
+            res.render("index.ejs",{data:database});
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
