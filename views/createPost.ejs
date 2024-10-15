@@ -1,0 +1,10 @@
+<%- include("partials/header.ejs") %>
+<!-- body code continue -->
+<form action="/v1/submit" method="POST">
+    <input type="text" name="title" placeholder="Title" />
+    <input type="text" name="tags" placeholder="Tags" />
+    <input type="text" name="content" placeholder="Write something" />
+    <input type="submit" value="OK" />
+  </form>
+<!-- body code end -->
+<%- include("partials/footer.ejs") %>

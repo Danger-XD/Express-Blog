@@ -1,0 +1,36 @@
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+/* navbar */
+.navbar {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+  }
+  .logo img {
+    width: 90px;
+    height: 90px;
+  }
+  .navbar ul {
+    display: flex;
+  }
+  .navbar ul li {
+    list-style: none;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--background-color02);
+  }

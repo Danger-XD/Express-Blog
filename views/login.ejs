@@ -1,0 +1,9 @@
+<%- include("partials/loginHeader.ejs") %>
+<!-- body code continue -->
+<form action="/v1/loginSubmit" method="POST">
+    <label for="loginEmail">Enter Your Email:</label>
+    <input type="email" name="loginEmail" placeholder="Email..." required/>
+    <input type="submit" value="Login" />
+  </form>
+<!-- body code end -->
+<%- include("partials/footer.ejs") %>

@@ -1,41 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/v1/submit" method="POST">
-        <input type="text" name="title" placeholder="Title">
-        <input type="text" name="tags" placeholder="Tags">
-        <input type="text" name="content" placeholder="Write something">
-        <input type="submit" value="OK">
-      </form>
-      <% if (data.length == 0) { %>
-        <h1>No blog post</h1>
-      <% }else{%>
-        <% for (let i = 0; i < data.length; i++) { %>
-            <h2><%= data[i].title %></h2>
-            <p><%= data[i].content %></p>
-            <p>Tags: <%= data[i].tags %></p>
-            <p>Date: <%= data[i].date %></p>
-
-            <!-- Form to Update the Post -->
-            <form action="/v1/update" method="POST">
-                <input type="hidden" name="title" value="<%= data[i].title %>"> <!-- Existing title to identify the post -->
-                <input type="text" name="newTitle" placeholder="New Title" value="<%= data[i].title %>">
-                <input type="text" name="newTags" placeholder="New Tags" value="<%= data[i].tags %>">
-                <input type="text" name="newContent" placeholder="New Content" value="<%= data[i].content %>">
-                <input type="submit" value="Update">
-            </form>
-
-            <!-- Form to Delete the Post -->
-            <form action="/v1/delete" method="POST" style="margin-top: 10px;">
-                <input type="hidden" name="title" value="<%= data[i].title %>"> <!-- Existing title to identify the post -->
-                <input type="submit" value="Delete">
-            </form>
-        <% } %>
-      <%} %>
-</body>
-</html>
+<%-include("partials/header.ejs") %>
+<!-- body code continue -->
+<h1>Welcome back <%=emailAddress[0].email%>!</h1>
+<% if (data.length == 0) { %>
+<h1>No blog post</h1>
+<% }else{%> <% for (let i = 0; i < data.length; i++) { %>
+<h2><%= data[i].title %></h2>
+<p>Date: <%= data[i].date %></p>
+<% } %> <%} %>
+<!-- body code end -->
+<%- include("partials/footer.ejs") %>
