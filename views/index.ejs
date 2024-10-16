@@ -1,11 +1,28 @@
 <%-include("partials/header.ejs") %>
 <!-- body code continue -->
-<h1>Welcome back <%=emailAddress[0].email%>!</h1>
-<% if (data.length == 0) { %>
-<h1>No blog post</h1>
-<% }else{%> <% for (let i = 0; i < data.length; i++) { %>
-<h2><%= data[i].title %></h2>
-<p>Date: <%= data[i].date %></p>
-<% } %> <%} %>
+<section class="hero container">
+    <div class="hero-text">
+      <h1>Welcome back <br><span><%=emailAddress[0].email%></span>!</h1>
+      <h3>It's a great day to share your thoughts! Ready to write your next post?</h3>
+    </div>
+  <div class="hero-image">
+    <img src="/images/photo1.jpg" alt="" />
+  </div>
+</section>
+<section class="blogs-part container">
+    <h1 class="recent-blogs-heading">Recent Blogs</h1>
+    <hr class="styled-divider">
+    <div class="blogs-post">
+        <% if (data.length == 0) { %>
+            <h1>No Blogs Posted Yet</h1>
+            <% }else{%> <% for (let i = 0; i < data.length; i++) { %>
+                <div class="blog-card">
+                    <h2><%= data[i].title %></h2>
+                    <p class="date">Date: <%= data[i].date %></p>
+                </div>
+            <% } %> <%} %>
+    </div>
+    div.
+</section>
 <!-- body code end -->
 <%- include("partials/footer.ejs") %>

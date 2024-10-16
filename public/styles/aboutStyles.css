@@ -1,0 +1,29 @@
+/* Heading Styling */
+.about-me{
+    margin-bottom: 20px !important;
+}
+
+  /* About Me Content Styling */
+  .about-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .about-content p {
+    margin-bottom: 12px;
+  }
+  
+  .skills-list, .skills-learning-list {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .skills-list li, .skills-learning-list li {
+    margin-bottom: 8px;
+  }
+  

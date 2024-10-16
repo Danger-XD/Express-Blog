@@ -1,0 +1,57 @@
+/* Form Styling */
+.write-post{
+    margin-bottom: 20px !important;
+}
+.blogw-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .input-field, .textarea-field {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    transition: border 0.3s ease;
+  }
+  
+  .input-field:focus, .textarea-field:focus {
+    border-color: #f06292; /* Highlight border on focus */
+    outline: none;
+  }
+  
+  .textarea-field {
+    height: 200px;
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .recent-blogs-heading {
+      font-size: 28px;
+    }
+  
+    .input-field, .textarea-field {
+      font-size: 14px;
+    }
+  }

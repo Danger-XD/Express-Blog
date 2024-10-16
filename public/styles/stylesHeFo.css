@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color: var(--background-color1);
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main{
+  font-family: "Lora", serif;
+}
+/* colors */
+:root {
+  --background-color1: #f8f9fa; /* light gray for overall page background */
+  --background-color2: #ffffff; /* pure white for card areas to give contrast */
+  --background-color3: #f28db2; /* light pink for buttons or headers for a soft touch */
+  --background-color4: #333333; /* dark gray for footer or header background */
+  --background-color5: #ffe5e5; /* very soft pink for hover states or highlighting sections */
+  --background-color6: #ff6f9156; /* vibrant pink for primary action buttons or accents */
+  --background-color7: #eaeaea; /* light gray for subtle borders or text highlights */
+  --background-color8: #f3f6f9; /* very pale blue-gray for secondary content areas */
+  --background-color9: #ffe8e8; /* light coral for error messages or warnings */
+  --background-color10: #000; /* black */
+  --background-color11: #33333380;
+  --background-color12: #5D67C8;
+}
+/* colors */
+/* google fonts */
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; /*600*/
+  font-style: normal;
+}
+.lora-assets {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+/* google fonts */
+/* navbar */
+.navbar {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  font-family: "Poppins", sans-serif;
+}
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+.navbar ul {
+  display: flex;
+}
+.navbar ul li {
+  list-style: none;
+}
+.navbar ul li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--background-color10);
+  position: relative;
+}
+.navbar ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px;
+  border-radius: 20px;
+  background: var(--background-color6); /* Light pink underline */
+  transition: width 0.3s ease; /* Smooth transition */
+  position: absolute;
+  bottom: 0;
+  left: 22px;
+}
+.navbar ul li a:hover::after {
+  width: 70%; /* Full underline on hover */
+}
+.menu-bar svg{
+  color: var(--background-color10);
+  height: 40px;
+  width: 40px;
+}
+/* navbar ends here */
+
+/* footer starts here */
+.footer {
+  width: 100%;
+  height: fit-content;
+  padding: 3rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--background-color2);
+  background-color: var(--background-color4);
+}
+/* footer ends here */

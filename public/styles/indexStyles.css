@@ -1,0 +1,94 @@
+/* hero start here */
+.hero{
+    height: 300px !important;
+    width: 80% !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5rem ;
+    align-items: center;
+    background-color: var(--background-color6);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--background-color11);
+    margin-bottom: 20px !important;
+  }
+  .hero-image img{
+    height:250px;
+    width: max-content;
+    border-radius: 18px;
+  }
+  .hero-text h1{
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 55px;
+  }
+  .hero-text span{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--background-color12);
+  }
+  .hero-text h3{
+    width: 85%;
+    text-align: justify;
+  }
+  /* hero ends here */
+  /* blogs-part in index */
+  /* Styling for Recent Blogs heading */
+.recent-blogs-heading {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-size: 32px; /* Large heading size */
+    color: #333; /* Dark grey color for text */
+    text-align: center; /* Center the heading */
+    margin-bottom: 10px; /* Space between heading and the hr */
+}
+
+/* Styling for the horizontal line (hr) */
+.styled-divider {
+    border: none; /* Remove default border */
+    height: 2px; /* Set thickness */
+    width: 80px; /* Set width for a shorter divider */
+    background-color: #ff6f61; /* Set color to match the theme (can be adjusted) */
+    margin: 0 auto 20px; /* Center the divider and add bottom margin */
+    border-radius: 10px; /* Round edges for a modern look */
+}
+
+  /* Blog post container */
+.blogs-post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+}
+/* Individual blog post card */
+.blog-card {
+    background-color: #ffffff; /* White background for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    padding: 20px;
+    width: 300px; /* Card width */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    border: 1px solid #eaeaea; /* Light border */
+}
+/* Blog title */
+.blog-card h2 {
+    font-family: 'Poppins', sans-serif; /* Clean sans-serif font */
+    font-size: 18px;
+    color: #333; /* Dark text color */
+    margin-bottom: 10px;
+}
+/* Blog date */
+.blog-card .date {
+    font-family: 'Roboto', sans-serif; /* Simple readable font for the date */
+    font-size: 14px;
+    color: #777; /* Subtle text color for the date */
+}
+
+/* Hover effect for blog cards */
+.blog-card:hover {
+    transform: translateY(-5px); /* Slight move up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+/* blogs-part in index ends */
+  
